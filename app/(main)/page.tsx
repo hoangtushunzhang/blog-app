@@ -1,10 +1,12 @@
+import AdminProfile from "../_components/AdminProfile";
+import Hero from "./_components/Hero";
 
 
 export default function Home() {
   return (
     <div>
-      Hello
+      <Hero />
+      <AdminProfile />
     </div>
-
   );
 }
