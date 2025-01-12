@@ -7,9 +7,11 @@ import { Button } from '@/components/ui/button'
 import ModeToggle from '@/components/ModeToggle'
 import { Maximize, Minimize } from 'lucide-react'
 import MobileNavbar from './MobileNavbar'
+import { UserButton, useUser } from '@clerk/nextjs'
 
 const Header = () => {
     const [isFullScreen, setIsFullScreen] = useState(false);
+    const { isSignedIn } = useUser();
 
     const toggleFullScreen = () => {
         if (!document.fullscreenElement) {
@@ -38,11 +40,22 @@ const Header = () => {
                 <div className='mr-20 hidden lg:block'>
                     <NavbarMenu />
                 </div>
-                <Link href={"/sign-in"}>
-                    <Button className='bg-myPrimaryBlue text-white hover:bg-myPrimaryBlue/80'>
-                        Sign In
-                    </Button>
-                </Link>
+                {isSignedIn ? (
+					<div className="flex items-center rounded-full gap-5">
+						<Link href={'/dashboard'}>
+							<Button className="bg-myPrimaryBlue hover:bg-myPrimaryBlue/80 text-white">
+								Dashboard
+							</Button>
+						</Link>
+						<UserButton />
+					</div>
+				) : (
+					<Link href={'/sign-in'}>
+						<Button className="bg-myPrimaryBlue hover:bg-myPrimaryBlue/80 text-white">
+							Sign In
+						</Button>
+					</Link>
+				)}
 
                 <div>
                     <ModeToggle />
