@@ -28,7 +28,7 @@ export default function AuthLayout({
                 className="rounded-full bg-white p-2"
               />
             </Link>
-            <div className="bg-myPrimaryBlue p-5 mt-3">
+            <div className="bg-myPrimaryBlue p-5 mt-3 rounded-[6px]">
               <h2 className="mt-6 text-2xl font-bold text-white">
                 Welcome to HTShun BLOG APP
               </h2>

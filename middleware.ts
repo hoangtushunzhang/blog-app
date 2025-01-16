@@ -1,6 +1,24 @@
-import { clerkMiddleware } from '@clerk/nextjs/server'
+import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
+import { NextResponse } from 'next/server';
 
-export default clerkMiddleware()
+const isProtectedRoute = createRouteMatcher(['/dashboard(.*)']);
+
+export const adminUserId = process.env.CLERK_ADMIN_USER_ID;
+
+export default clerkMiddleware(
+  async (auth, req) => {
+    const { userId } = await auth();
+    const url = req.nextUrl.clone();
+    url.pathname = '/unauthorized';
+    if (!userId && isProtectedRoute(req)) {
+      return (await auth()).redirectToSignIn();
+    }
+    if (userId != adminUserId && isProtectedRoute(req)) {
+      return NextResponse.rewrite(url);
+    }
+  }
+);
+
 
 export const config = {
   matcher: [
@@ -10,3 +28,4 @@ export const config = {
     '/(api|trpc)(.*)',
   ],
 }
+
