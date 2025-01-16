@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import {
     Sheet,
     SheetContent,
-    SheetHeader,
+    SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet"
 import Link from "next/link"
@@ -25,16 +25,16 @@ const MobileNavbar = () => {
             {SHEET_SIDES.map((side) => (
                 <Sheet key={side}>
                     <SheetTrigger asChild>
-                        <Button>
+                        <Button variant={'outline'}>
                             <Menu />
                         </Button>
                     </SheetTrigger>
                     <SheetContent side={side} className="max-w-[200px]">
-                        <SheetHeader>
+                        <SheetTitle>
                             <Link href={'/'} >
                                 <Logo />
                             </Link>
-                        </SheetHeader>
+                        </SheetTitle>
                         <hr className="my-3" />
                         <div className="h-full fixed">
                             <NavigationMenu>
