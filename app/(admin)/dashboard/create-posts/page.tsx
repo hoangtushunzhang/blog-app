@@ -23,8 +23,8 @@ import { AccountTagsItems, CategoryItems, FinanceTagsItems, ITTagsItems, StatusI
 import Image from "next/image";
 import { CirclePlus } from "lucide-react";
 import MarkdownDisplay from '@/app/_components/MarkdownDisplay';
-import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
-import { storage } from '@/configs/firebaseConfig';
+// import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+// import { storage } from '@/configs/firebaseConfig';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useUser } from '@clerk/nextjs';
@@ -40,21 +40,57 @@ const CreatePostPage = () => {
     const [loading, setLoading] = useState(false);
 
     const onFileSelected = async (e: React.ChangeEvent<HTMLInputElement>) => {
-        if (e.target.files) {
-            // Upload image to firebase storage and download url
-            const file = e.target.files[0];
-            const fileName = Date.now() + '.png';
-            const storageRef = ref(storage, 'htshun-blog-app/' + fileName);
+        // if (e.target.files) {
+        //     // Upload image to firebase storage and download url
+        //     const file = e.target.files[0];
+        //     const fileName = Date.now() + '.png';
+        //     const storageRef = ref(storage, 'htshun-blog-app/' + fileName);
 
-            await uploadBytes(storageRef, file)
-                .then((snapshot) => {
-                    console.log('Uploaded a blob or file!', snapshot);
-                })
-                .then(() => {
-                    getDownloadURL(storageRef).then(async (downloadUrl) => {
-                        setSelectedFile(downloadUrl);
+        //     await uploadBytes(storageRef, file)
+        //         .then((snapshot) => {
+        //             console.log('Uploaded a blob or file!', snapshot);
+        //         })
+        //         .then(() => {
+        //             getDownloadURL(storageRef).then(async (downloadUrl) => {
+        //                 setSelectedFile(downloadUrl);
+        //             });
+        //         });
+        // }
+
+        if (e.target.files && e.target.files.length > 0) {
+            const file = e.target.files[0];
+            const reader = new FileReader();
+    
+            reader.onloadend = async () => {
+                const base64 = reader.result as string;
+                if (!base64) {
+                    console.error('Error reading file');
+                    return;
+                }
+    
+                try {
+                    const response = await fetch('/api/upload', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ file: base64 }), // Gửi chuỗi Base64 lên API
                     });
-                });
+    
+                    if (response.ok) {
+                        const data = await response.json();
+                        setSelectedFile(data.url); // Lưu URL từ Cloudinary
+                    } else {
+                        console.error('Upload failed:', response.statusText);
+                    }
+                } catch (error) {
+                    console.error('Error uploading file:', error);
+                }
+            };
+    
+            reader.readAsDataURL(file); // Đọc file và chuyển thành Base64
+        } else {
+            console.error('No file selected');
         }
     };
 
@@ -340,7 +376,7 @@ const CreatePostPage = () => {
                         <Button type="submit"
                             className='text-lg p-6 text-white bg-myPrimaryBlue hover:bg-myPrimaryBlue/80'
                             disabled={loading}>
-                            Submit</Button>
+                           Lưu bài viết</Button>
                     </form>
                 </Form>
             </div>
