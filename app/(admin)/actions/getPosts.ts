@@ -56,3 +56,4 @@ export const getPostsByCatAndTag = async (catSlug: string, tag: string) => {
 		console.error(error);
 	}
 };
+
