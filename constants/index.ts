@@ -1,4 +1,4 @@
-import { FilePlusIcon, LayoutDashboard, LoaderIcon, SettingsIcon, StickyNoteIcon } from "lucide-react"
+import { BadgeDollarSign, Calculator, FilePlusIcon, GlobeLock, LayoutDashboard, LoaderIcon, SettingsIcon, StickyNoteIcon } from "lucide-react"
 
 export const NavMenuItems = [
     {
@@ -18,13 +18,28 @@ export const NavMenuItems = [
 
 export const CategoryItems = [
     {
-        value: 'accounting', label: 'Kế toán', href: '/category/accounting'
+        value: 'accounting',
+        label: 'Kế toán',
+        href: '/category/accounting',
+        icon: Calculator,
+        bgColor: 'bg-myPrimaryBlue',
+        color: 'myPrimaryBlue'
     },
     {
-        value: 'finance', label: 'Tài chính', href: '/category/finance'
+        value: 'finance',
+        label: 'Tài chính',
+        href: '/category/finance',
+        icon: BadgeDollarSign,
+        bgColor: 'bg-myPrimaryGreen',
+        color: 'myPrimaryGreen'
     },
     {
-        value: 'it', label: 'Công nghệ thông tin', href: '/category/it'
+        value: 'it',
+        label: 'Công nghệ thông tin',
+        href: '/category/it',
+        icon: GlobeLock,
+        bgColor: 'bg-myPrimaryYellow',
+        color: 'myPrimaryYellow'
     }
 ]
 
@@ -122,10 +137,10 @@ export const TagsItems = [
 ];
 
 export const StatusItems = [
-{
-    value: 'draft', label: 'Bản nháp',
-},
-{
-    value: 'publish', label: 'Xuất bản',
-},
+    {
+        value: 'draft', label: 'Bản nháp',
+    },
+    {
+        value: 'publish', label: 'Xuất bản',
+    },
 ]

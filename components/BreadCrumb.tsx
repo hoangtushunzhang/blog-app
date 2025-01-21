@@ -12,7 +12,7 @@ interface BreadcrumbProps {
 	cat?: string;
 }
 
-const BreadCrumb = ({ url }: BreadcrumbProps) => {
+const BreadCrumb = ({ url, cat }: BreadcrumbProps) => {
 	return (
 		<Breadcrumb>
 			<BreadcrumbList>
@@ -21,7 +21,7 @@ const BreadCrumb = ({ url }: BreadcrumbProps) => {
 				</BreadcrumbItem>
 				<BreadcrumbSeparator />
 				<BreadcrumbItem>
-					<BreadcrumbLink href={`/dashboard`}>Dashboard</BreadcrumbLink>
+					<BreadcrumbLink href={`/category/${cat}`}>Category</BreadcrumbLink>
 				</BreadcrumbItem>
 				<BreadcrumbSeparator />
 				<BreadcrumbItem>
