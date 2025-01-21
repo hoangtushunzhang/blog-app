@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { TagsItems } from '@/constants';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
+
 interface TagListProps {
 	cat: string;
 }
@@ -12,9 +13,11 @@ const TagList = ({ cat }: TagListProps) => {
 	const pathname = usePathname();
 	const router = useRouter();
 
-	const currentTag = searchParams.get('tag') || '';
+	const currentTag = searchParams?.get('tag') || '';
 
 	const createTagURL = (tag: string) => {
+		if (!searchParams) return;
+		
 		const params = new URLSearchParams(searchParams);
 		params.set('tag', tag.toString());
 		router.push(`${pathname}?${params.toString()}`);

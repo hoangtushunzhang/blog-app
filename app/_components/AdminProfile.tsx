@@ -3,7 +3,7 @@ import React from 'react'
 
 const AdminProfile = () => {
     return (
-        <div className='flex flex-col md:flex-row bg-myPrimaryBlue/80 p-10 gap-20 items-center justify-center'>
+        <div className='flex flex-col md:flex-row bg-myPrimaryBlue/80 p-10 gap-20 items-center justify-center rounded-lg'>
             <div className='flex rounded-xl bg-white items-center justify-center overflow-hidden p-3' >
                 <Image
                     src='/logo.svg'
