@@ -66,7 +66,7 @@ const MobileSidebar = () => {
 											link={item.link}
 											label={item.label}
 											Icon={item.icon}
-											pathname={pathname}
+											pathname={pathname!}
 										/>
 									))}
 								</NavigationMenuList>
