@@ -131,7 +131,6 @@ const CreatePostPage = () => {
         router.push('/dashboard');
     }
 
-
     return (
         <div className='flex flex-col'>
             <ContentHeader leftsideTitle='Tạo' rightsideTitle='bài viết mới'
