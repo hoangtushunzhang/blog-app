@@ -68,7 +68,7 @@ Blog App là dự án về trang blog nơi cho phép chia sẻ những kiến th
 ![Trang chính](c:\Users\XuanQuang\Pictures\Screenshots\home.png)
 
 ### Dashboard, Markdown Chart:
-![Markdown Chart](path/to/screenshot2.png)
+![Markdown Chart](dashboard.png)
 
 ### Sign In/ Sign Up:
 ![Sign In/ Sign Up](path/to/screenshot3.png)
