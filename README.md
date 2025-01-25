@@ -1,37 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Blog App
 
-## Getting Started
+Blog App là dự án về trang blog nơi cho phép chia sẻ những kiến thức về kế toán, tài chính và đặc biệt là lập trình bằng Tiếng Việt. Khả năng đăng ký, đăng nhập, đăng bài, chỉnh sửa và hiển thị bài viết một cách trực quan và thân thiện. Ứng dụng tận dụng các công nghệ và thư viện hiện đại để đảm bảo hiệu năng và trải nghiệm người dùng tốt nhất.
 
-First, run the development server:
+## Công nghệ sử dụng
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **React**: Thư viện chính để xây dựng giao diện người dùng.
+- **Clerk**: Hệ thống xác thực và quản lý người dùng, sử dụng để đăng ký và đăng nhập.
+- **Tailwind CSS**: Framework CSS tiện dụng giúp thiết kế giao diện đẹp mắt và tùy chỉnh nhanh chóng.
+- **Shadcn UI**: Thư viện giao diện người dùng sẵn có để tăng tốc phát triển.
+- **Drizzle ORM**: ORM mạnh mẽ và dễ sử dụng để làm việc với cơ sở dữ liệu.
+- **Neon Postgres**: Dịch vụ Postgres cloud để lưu trữ và quản lý cơ sở dữ liệu.
+- **Cloudinary**: Nền tảng lưu trữ hình ảnh và quản lý tệp đa phương tiện.
+- **React Markdown**: Công cụ chuyển đổi Markdown thành HTML để hiển thị biểu đồ và nội dung tương tác.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tính năng chính
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Đăng ký và đăng nhập**:
+   - Sử dụng Clerk để hỗ trợ xác thực tài khoản.
+   - Bảo mật thông tin người dùng.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. **Quản lý bài viết**:
+   - Đăng bài với hình ảnh được lưu trữ qua Cloudinary.
+   - Chỉnh sửa và xóa bài viết dễ dàng.
 
-## Learn More
+3. **Giao diện người dùng**:
+   - Thiết kế thân thiện với Tailwind CSS.
+   - Các thành phần UI được cung cấp bởi Shadcn UI.
 
-To learn more about Next.js, take a look at the following resources:
+4. **Xử lý dữ liệu**:
+   - Sử dụng Drizzle ORM để tương tác với Neon Postgres một cách hiệu quả.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. **Markdown hỗ trợ**:
+   - Hiển thị biểu đồ và nội dung từ Markdown sử dụng React Markdown.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Cài đặt
 
-## Deploy on Vercel
+1. Clone repository:
+   ```bash
+   git clone <link-repo>
+   cd blog-app
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Cài đặt các package:
+   ```bash
+   npm install
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# blog-app
+3. Cấu hình biến môi trường:
+   - Tạo file `.env.local` trong thư mục gốc.
+   - Thêm các biến sau:
+     ```env
+     CLERK_API_KEY=your-clerk-api-key
+     DATABASE_URL=your-neon-postgres-url
+     CLOUDINARY_API_KEY=your-cloudinary-api-key
+     CLOUDINARY_API_SECRET=your-cloudinary-api-secret
+     CLOUDINARY_CLOUD_NAME=your-cloudinary-cloud-name
+     ```
+
+4. Chạy dự án:
+   ```bash
+   npm run dev
+   ```
+
+## Ảnh chụp màn hình
+
+### Trang chính:
+![Trang chính](c:\Users\XuanQuang\Pictures\Screenshots\home.png)
+
+### Dashboard, Markdown Chart:
+![Markdown Chart](path/to/screenshot2.png)
+
+### Sign In/ Sign Up:
+![Sign In/ Sign Up](path/to/screenshot3.png)
+
+## Đóng góp
+Mọi đóng góp đều được chào đón! Vui lòng gửi pull request hoặc tạo issue để cải thiện dự án.
+
+---
+
+Nếu bạn có bất kỳ câu hỏi hoặc ý kiến, vui lòng liên hệ qua email hoặc tạo issue trên repository này. Chúc bạn sử dụng Blog App vui vẻ!
