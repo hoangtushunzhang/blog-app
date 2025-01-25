@@ -4,7 +4,7 @@ Blog App là dự án về trang blog nơi cho phép chia sẻ những kiến th
 
 ## Công nghệ sử dụng
 
-- **React**: Thư viện chính để xây dựng giao diện người dùng.
+- Dự án được sử dụng với Next.js 15 và React 19 
 - **Clerk**: Xác thực và quản lý người dùng, sử dụng để đăng ký và đăng nhập.
 - **Tailwind CSS**: Thiết kế giao diện đẹp mắt và tùy chỉnh nhanh chóng.
 - **Shadcn UI**: Thư viện giao diện sẵn có để tăng tốc phát triển.
@@ -66,6 +66,19 @@ https://blog-app-csqh.vercel.app/
 ## Đóng góp
 Mọi đóng góp đều được chào đón! Vui lòng gửi pull request hoặc tạo issue để cải thiện dự án.
 
+Nếu bạn muốn đóng góp cho dự án, hãy làm theo các bước sau:
+
+1. Fork repository.
+2. Tạo nhánh mới:
+   ```bash
+   git checkout -b feature/<tên-tính-năng>
+   ```
+3. Commit thay đổi:
+   ```bash
+   git commit -m "Thêm tính năng <tên-tính-năng>"
+   ```
+4. Gửi pull request.
+
 ---
 
-Nếu bạn có bất kỳ câu hỏi hoặc ý kiến, vui lòng liên hệ qua email hoặc tạo issue trên repository này. Chúc bạn có một trải nghiệm thật tốt ạ!
+Chúc bạn có một trải nghiệm thật tốt ạ!
