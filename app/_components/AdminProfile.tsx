@@ -17,7 +17,7 @@ const AdminProfile = () => {
                     Hoang Tu Shun Official
                 </h1>
                 <h2 className='text-xl font-semibold text-white'>
-                    quang456a@gmail.com
+                    shunquang.contact@gmail.com
                 </h2>
             </div>
         </div>
