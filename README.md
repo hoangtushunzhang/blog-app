@@ -4,11 +4,11 @@ Blog App là dự án về trang blog nơi cho phép chia sẻ những kiến th
 
 ## Công nghệ sử dụng
 
-- **React**: Thư viện chính để xây dựng giao diện người dùng.
-- **Clerk**: Hệ thống xác thực và quản lý người dùng, sử dụng để đăng ký và đăng nhập.
-- **Tailwind CSS**: Framework CSS tiện dụng giúp thiết kế giao diện đẹp mắt và tùy chỉnh nhanh chóng.
-- **Shadcn UI**: Thư viện giao diện người dùng sẵn có để tăng tốc phát triển.
-- **Drizzle ORM**: ORM mạnh mẽ và dễ sử dụng để làm việc với cơ sở dữ liệu.
+- Dự án được sử dụng với Next.js 15 và React 19 
+- **Clerk**: Xác thực và quản lý người dùng, sử dụng để đăng ký và đăng nhập.
+- **Tailwind CSS**: Thiết kế giao diện đẹp mắt và tùy chỉnh nhanh chóng.
+- **Shadcn UI**: Thư viện giao diện sẵn có để tăng tốc phát triển.
+- **Drizzle ORM**: ORM để làm việc với cơ sở dữ liệu.
 - **Neon Postgres**: Dịch vụ Postgres cloud để lưu trữ và quản lý cơ sở dữ liệu.
 - **Cloudinary**: Nền tảng lưu trữ hình ảnh và quản lý tệp đa phương tiện.
 - **React Markdown**: Công cụ chuyển đổi Markdown thành HTML để hiển thị biểu đồ và nội dung tương tác.
@@ -16,19 +16,18 @@ Blog App là dự án về trang blog nơi cho phép chia sẻ những kiến th
 ## Tính năng chính
 
 1. **Đăng ký và đăng nhập**:
-   - Sử dụng Clerk để hỗ trợ xác thực tài khoản.
-   - Bảo mật thông tin người dùng.
+   - Sử dụng Clerk để hỗ trợ xác thực tài khoản, đăng ký đăng nhập.
 
 2. **Quản lý bài viết**:
    - Đăng bài với hình ảnh được lưu trữ qua Cloudinary.
    - Chỉnh sửa và xóa bài viết dễ dàng.
 
 3. **Giao diện người dùng**:
-   - Thiết kế thân thiện với Tailwind CSS.
+   - Thiết kế với Tailwind CSS.
    - Các thành phần UI được cung cấp bởi Shadcn UI.
 
 4. **Xử lý dữ liệu**:
-   - Sử dụng Drizzle ORM để tương tác với Neon Postgres một cách hiệu quả.
+   - Sử dụng Drizzle ORM để tương tác với Neon Postgres.
 
 5. **Markdown hỗ trợ**:
    - Hiển thị biểu đồ và nội dung từ Markdown sử dụng React Markdown.
@@ -61,21 +60,25 @@ Blog App là dự án về trang blog nơi cho phép chia sẻ những kiến th
    ```bash
    npm run dev
    ```
-
-## Ảnh chụp màn hình
-
-### Trang chính:
-![Trang chính](c:\Users\XuanQuang\Pictures\Screenshots\home.png)
-
-### Dashboard, Markdown Chart:
-![Markdown Chart](dashboard.png)
-
-### Sign In/ Sign Up:
-![Sign In/ Sign Up](path/to/screenshot3.png)
+## Dự án đã được deploy lên Vercel, có thể xem nhanh dự án qua link: 
+https://blog-app-csqh.vercel.app/
 
 ## Đóng góp
 Mọi đóng góp đều được chào đón! Vui lòng gửi pull request hoặc tạo issue để cải thiện dự án.
 
+Nếu bạn muốn đóng góp cho dự án, hãy làm theo các bước sau:
+
+1. Fork repository.
+2. Tạo nhánh mới:
+   ```bash
+   git checkout -b feature/<tên-tính-năng>
+   ```
+3. Commit thay đổi:
+   ```bash
+   git commit -m "Thêm tính năng <tên-tính-năng>"
+   ```
+4. Gửi pull request.
+
 ---
 
-Nếu bạn có bất kỳ câu hỏi hoặc ý kiến, vui lòng liên hệ qua email hoặc tạo issue trên repository này. Chúc bạn sử dụng Blog App vui vẻ!
+Chúc bạn có một trải nghiệm thật tốt ạ!
